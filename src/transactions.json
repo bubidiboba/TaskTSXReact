@@ -1,0 +1,132 @@
+[
+  {
+    "id": "t1",
+    "type": "Credit",
+    "name": "Apple",
+    "description": "Card Number Used\nDiana",
+    "amount": 14.06,
+    "date": "2025-10-28T12:00:00.000Z",
+    "pending": true,
+    "authorizedUser": "Diana",
+    "status": "Pending",
+    "iconHint": "apple",
+    "category": "Digital"
+  },
+  {
+    "id": "t2",
+    "type": "Payment",
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank National Association",
+    "amount": 174.0,
+    "date": "2025-10-27T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "bank"
+  },
+  {
+    "id": "t3",
+    "type": "Credit",
+    "name": "Apple",
+    "description": "Card Number Used\nDiana",
+    "amount": 3.26,
+    "date": "2025-10-28T12:00:00.000Z",
+    "authorizedUser": "Diana",
+    "iconHint": "apple",
+    "category": "Digital"
+  },
+  {
+    "id": "t4",
+    "type": "Payment",
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank National Association",
+    "amount": 99.71,
+    "date": "2025-10-25T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "bank"
+  },
+  {
+    "id": "t5",
+    "type": "Payment",
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank National Association",
+    "amount": 73.58,
+    "date": "2025-10-24T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "bank"
+  },
+  {
+    "id": "t6",
+    "type": "Credit",
+    "name": "IKEA",
+    "description": "Round Rock, TX",
+    "amount": 21.61,
+    "date": "2025-10-23T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "bag",
+    "category": "Home"
+  },
+  {
+    "id": "t7",
+    "type": "Credit",
+    "name": "Target",
+    "description": "Cedar Park, TX",
+    "amount": 73.58,
+    "date": "2025-10-22T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "bag",
+    "category": "Retail"
+  },
+  {
+    "id": "t8",
+    "type": "Credit",
+    "name": "Uber",
+    "description": "Ride to Airport",
+    "amount": 18.35,
+    "date": "2025-10-20T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "bus",
+    "category": "Transport"
+  },
+  {
+    "id": "t9",
+    "type": "Credit",
+    "name": "Starbucks",
+    "description": "Latte & Croissant",
+    "amount": 7.5,
+    "date": "2025-10-17T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "utensils",
+    "category": "Food"
+  },
+  {
+    "id": "t10",
+    "type": "Credit",
+    "name": "Amazon",
+    "description": "Order #113-8534",
+    "amount": 45.99,
+    "date": "2025-10-15T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "amazon",
+    "category": "Online"
+  },
+  {
+    "id": "t11",
+    "type": "Payment",
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank National Association",
+    "amount": 250.0,
+    "date": "2025-10-09T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "bank"
+  },
+  {
+    "id": "t12",
+    "type": "Credit",
+    "name": "Google",
+    "description": "Google One Subscription",
+    "amount": 1.99,
+    "date": "2025-09-24T12:00:00.000Z",
+    "status": "Approved",
+    "iconHint": "google",
+    "category": "Digital"
+  }
+]

@@ -1,0 +1,334 @@
+:root {
+    --bg: #f3f4f6; /* neutral-100 */
+    --card: #ffffff;
+    --text: #0f172a; /* slate-900 */
+    --muted: #6b7280; /* gray-500 */
+    --border: #e5e7eb; /* gray-200 */
+    --success: #0ea5e9; /* sky-500 */
+    --ok: #10b981; /* green-500 */
+    --danger: #ef4444; /* red-500 */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.app-shell {
+    max-width: 390px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: var(--bg);
+    position: relative;
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* --- Sections --- */
+.section {
+    padding: 6px 16px 0 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.02), 0 6px 18px rgba(0,0,0,0.04);
+    padding: 10px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.card h4{
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.daily-points h2{
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.daily-points{
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.02), 0 6px 18px rgba(0,0,0,0.04);
+    align-items: center;
+    padding: 21px 16px;
+}
+
+.balance-amount {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.balance-amount-points-value{
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.balance-sub {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.duedone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.duedone .tick {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #f1f5f9;
+    border: 1px solid var(--border);
+}
+
+.points {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.points .num {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.points .lbl {
+    display: none;
+}
+
+.section-title {
+    margin: 14px 16px 8px 16px;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+/* --- Transaction list --- */
+.list {
+    padding: 0 16px 80px 16px;
+}
+
+/* Each transaction item */
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    flex: 0 0 44px;
+}
+
+/* -------------------------------
+   TRANSACTION CONTENT GRID FIX
+--------------------------------*/
+.item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Use grid so the right side (amount+percent) never overlaps text */
+.item-content.grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 8px;
+    row-gap: 2px;
+    align-items: start;
+    min-width: 0;
+}
+
+/* Name of merchant */
+.item-name {
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: 700;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Right column: amount + percent stacked */
+.item-amount-group {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    line-height: 1;
+    gap: 0;
+    flex-shrink: 0;
+    min-width: 48px;
+}
+
+.item-amount {
+    font-weight: 800;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.percent-box {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--muted);
+    background: #f9fafb; /* soft neutral background to make it visible */
+    border: 1px solid #e5e7eb; /* light gray border for definition */
+    border-radius: 6px;
+    line-height: 1;
+    text-align: right;
+    padding: 2px 5px; /* small padding to make it more visible */
+    margin-top: 2px; /* tiny space below amount for separation */
+    min-width: 28px;
+    max-width: 34px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04); /* subtle depth */
+}
+
+/* Description (middle line) */
+.item-desc {
+    grid-column: 1;
+    grid-row: 2;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: pre-wrap;
+}
+
+/* Authorized user + date (bottom line) */
+.item-meta {
+    grid-column: 1;
+    grid-row: 3;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+/* --- Navbar --- */
+.navbar {
+    position: sticky;
+    bottom: 0;
+    height: 8px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 12px;
+}
+
+/* --- Detail screen --- */
+.detail {
+    padding: 8px 16px 24px 16px;
+}
+
+.detail .back {
+    padding: 14px 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-weight: 600;
+    border: none;
+    background: none;
+}
+
+.detail-amount {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 900;
+    margin: 8px 0;
+}
+
+.detail-merchant {
+    text-align: center;
+    color: var(--muted);
+    margin-top: -6px;
+}
+
+.detail-datetime {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.detail-card {
+    margin-top: 16px;
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.02), 0 6px 18px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+.row + .row {
+    border-top: 1px solid var(--border);
+}
+
+.label {
+    color: var(--muted);
+}
